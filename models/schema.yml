@@ -10,7 +10,7 @@ models:
           - not_null
 
       - name: host_id
-        description: Cleansed table which contains Airbnb hosts.
+        description: The id of the host.
         tests:
           - not_null
           - relationships:
@@ -29,3 +29,23 @@ models:
       - name: minimum_nights
         tests:
           - positive_value
+  
+  - name: 'dim_hosts_cleansed'
+    description: Cleansed table which contains Airbnb hosts.
+    columns:
+      - name: host_id
+        description: The id of the host.
+        tests:
+          - not_null
+          - unique
+
+      - name: host_name
+        description: The name of the host.
+        tests:
+          - not_null
+      
+      - name: is_superhost
+        description: Defines whether the hosts is a superhost
+        tests:
+          - accepted_values:
+              values: ['True','False']
