@@ -6,4 +6,4 @@ Try running the following commands:
 - dbt run
 - dbt test
 
-![alt text](/dbtproject/target/dbt-run-results.png)
+![alt text](https://github.com/vabnix/dbt-project/dbtproject/dbt-run-results.png)
