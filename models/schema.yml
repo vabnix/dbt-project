@@ -48,4 +48,4 @@ models:
         description: Defines whether the hosts is a superhost
         tests:
           - accepted_values:
-              values: ['True','False']
+              values: ['TRUE','FALSE']
