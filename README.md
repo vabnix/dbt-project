@@ -66,3 +66,7 @@ Try running the following commands:
 - dbt test
 ```
 ![alt text](https://github.com/vabnix/dbt-project/blob/main/dbt-run-results.png)
+
+### Using dbt variables
+dbt run-operation learn_macro
+dbt run-operation learn_macro --vars '{user_name: Vaibhav}'
