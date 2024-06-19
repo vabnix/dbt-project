@@ -8,6 +8,10 @@ models:
         tests:
           - unique
           - not_null
+          - dbt_expectations.expect_column_values_to_not_be_null:
+              row_condition: "listing_id is not null"
+          - dbt_expectations.expect_column_to_exist
+              
 
       - name: host_id
         description: The id of the host.
@@ -16,6 +20,8 @@ models:
           - relationships:
               to: ref('dim_hosts_cleansed')
               field: host_id
+          - dbt_expectations.expect_column_values_to_not_be_null:
+              row_condition: "host_id is not null"
 
       - name: room_type
         description: Type of Rooms.
@@ -38,6 +44,8 @@ models:
         tests:
           - not_null
           - unique
+          - dbt_expectations.expect_column_values_to_not_be_null:
+              row_condition: "host_id is not null"
 
       - name: host_name
         description: The name of the host.
